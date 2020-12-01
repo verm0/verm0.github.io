@@ -1,1 +1,26 @@
-dgfdgdg
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo of CORS Anywhere</title>
+<meta name="viewport" content="width=device-width">
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+</head>
+<body>
+<script>//<![CDATA[
+$(document).ready(function(){
+
+$.ajaxSetup({ cache: false });
+$.getJSON('https://veri28.000webhostapp.com',
+{v: 'GTyLXzCxZYI'},
+function(data) {
+$('#content').append(data);
+}
+});
+alert('dsdsd');
+
+});
+//]]></script>
+<div id='content'></div>
+</body>
+</html>
