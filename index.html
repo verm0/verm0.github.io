@@ -9,18 +9,11 @@
 <body>
 <script>//<![CDATA[
 $(document).ready(function(){
-
-$.ajaxSetup({ cache: false });
-$.getJSON('https://veri28.000webhostapp.com',
-{v: 'GTyLXzCxZYI'},
-function(data) {
-$('#content').append(data);
-}
-});
-alert('dsdsd');
-
+$.ajax({url: "https://veri28.000webhostapp.com/?v=GTyLXzCxZYI", success: function(result){
+    $("#c").html(result);
+  }});
 });
 //]]></script>
-<div id='content'></div>
+<div id='c'></div>
 </body>
 </html>
