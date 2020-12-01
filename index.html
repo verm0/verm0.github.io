@@ -11,8 +11,10 @@
 $(document).ready(function(){
 $.ajax({
     url: "https://veri28.000webhostapp.com/?v=GTyLXzCxZYI",
+    dataType: "json",
     success: function(result){
-    $("#c").html(result);alert('oke');
+    $("#c").html(result.title);
+        alert('oke');
     }
        });
 });
