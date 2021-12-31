@@ -1,1 +1,113 @@
-hell.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" /> <meta http-equiv="Expires" content="0" />
+<style>
+*{margin:0;padding:0}
+body{
+background: #fff;
+color: #333;
+font-size:16px;
+width:100%;
+line-height:1.6;
+overflow:hidden;
+padding:1em;
+}
+select{
+width:140px;
+padding:6px 8px;
+background:#eee;
+border:1px solid #000;
+font-size:16px;
+display:block;
+}
+.radio{
+margin:1em 0;
+}
+input[type=submit]{
+background:green;
+color:#fff;
+font-size:17px;
+padding:8px 12px;
+border:1px solid orange;
+}
+.label{
+display:inline-block;
+padding:0 4px 5px 4px;
+}
+</style>
+<script src='jquery.js'></script>
+</head>
+<body class="fadeIn">
+<form action="">
+<select name="hadiah">
+<option value="Watcher">Watcher</option>
+<option value="Chaos Dragon">Chaos Dragon</option>
+<option value="Brilliant Orbs">Brilliant Orbs</option>
+<option value="Bright Orbs">Bright Orbs</option>
+<option value="Chaos Core">Chaos Core</option>
+<option value="Ancient Core">Ancient Core</option>
+</select>
+<div class="radio">
+<input name="misi1" type="radio" value="Research"/><span class="label">Research</span>
+<input name="misi2" type="radio" value="Training"/><span class="label">Training</span>
+<input name="misi3" type="radio" value="Merge Patch"/><span class="label">Merge</span>
+</div>
+<input type="submit" name="go" value="GO TO SHARE"/>
+</form>
+
+<script>
+var getUrlParameter = function getUrlParameter(sParam) { var sPageURL = decodeURIComponent(window.location.search.substring(1)), sURLVariables = sPageURL.split('&'), sParameterName, i; for (i = 0; i < sURLVariables.length; i++) { sParameterName = sURLVariables[i].split('=');if (sParameterName[0] === sParam) {
+return sParameterName[1] === undefined ? true : sParameterName[1]; } } };
+
+function jam() {
+var d = new Date(), h;
+h = d.getHours();
+return h;
+setTimeout('jam()', 1000);
+}
+function menit() {
+var d = new Date(), m;
+m = set(d.getMinutes());
+return m;
+setTimeout('menit()', 1000);
+}
+
+function set(e){
+e = e < 10 ? '0'+ e : e; return e;
+}
+
+var go = getUrlParameter('go');
+var hell = '🇭​​​​​🇪​​​​​🇱​​​​​🇱​​​​​   🇪​​​​​🇻​​​​​🇪​​​​​🇳​​​​​🇹​​​​​%0A%0A';
+var hadiah = '🎁 '+getUrlParameter('hadiah');
+var misi1 = getUrlParameter('misi1');
+var misi2 = getUrlParameter('misi2');
+var misi3 = getUrlParameter('misi3');
+if(misi1 === undefined){misi1 = ''}
+else{misi1 = '%0A ➥  '+misi1}
+if(misi2 === undefined){misi2 = ''}
+else{misi2 = '%0A ➥  '+misi2}
+if(misi3 === undefined){misi3 = ''}
+else{misi3 = '%0A ➥  '+misi3}
+
+if(menit() > 55){
+var jam= jam() + 1;
+}else{
+var jam= jam();
+}
+var time = '%0A⌚ '+jam+':00 - '+jam+':55';
+
+$(document).ready(function(){
+
+if(go){
+var link =`https://wa.me?text=${hell+hadiah+misi1+misi2+misi3+time}`;
+window.location =link;
+}
+});
+</script>
+</body>
+</html>
